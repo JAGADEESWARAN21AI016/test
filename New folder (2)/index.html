@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tab Switch Counter</title>
+</head>
+<body>
+    <h1>Tab Switch Counter</h1>
+    <p>Number of tab switches: <span id="switchCount">0</span></p>
+    <script>
+        let switchCount = 0;
+
+        // Function to update the switch count in the UI
+        function updateSwitchCount() {
+            const switchCountElement = document.getElementById('switchCount');
+            switchCountElement.textContent = switchCount;
+        }
+
+        // Event listener for tab switch
+        window.addEventListener('blur', function () {
+            // Increment the switch count
+            switchCount++;
+            updateSwitchCount();
+        });
+
+        // Initialize the UI
+        updateSwitchCount();
+    </script>
+</body>
+</html>
